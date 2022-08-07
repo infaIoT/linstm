@@ -374,7 +374,7 @@
      #address-cells = <1>;
      #size-cells = <0>;
      keep-power-in-suspend;
-     status = "okay";
+     status = "disabled";
  
      brcmf: bcrmf@1 {
          reg = <1>;
@@ -443,6 +443,16 @@
 	can-transceiver {
 		max-bitrate = <5000000>;
 	};
+};
+
+&m_can2{
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&fdcan2_pins_mx>;
+	pinctrl-1 = <&fdcan2_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN m_can2 */
+	/* USER CODE END m_can2 */
 };
 
 /*DEBUG*/
@@ -531,7 +541,7 @@
 
 
 /*SPI1 for A7 core*/
-/*
+/**/
 &spi1 {
 	pinctrl-names = "default", "sleep";
         pinctrl-0 = <&spi1_pins_a>;
@@ -545,9 +555,18 @@
     };
 
 };
-*/
 
-/*SPI1 for M4 core*/
+&spi4{
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&spi4_pins_mx>;
+	pinctrl-1 = <&spi4_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN spi4 */
+	/* USER CODE END spi4 */
+};
+
+/*SPI1 for M4 core
 
 &m4_spi1 {
    pinctrl-names = "rproc_default";
@@ -555,7 +574,7 @@
    status = "okay";
 
 };
-
+*/
 
 &sram {
 	dma_pool: dma_pool@0 {
@@ -661,7 +680,7 @@
    status = "okay";
 };
 
-/*otg*/
+/*otg
 &usbotg_hs {
 	phys = <&usbphyc_port1 0>;
 	phy-names = "usb2-phy";
@@ -674,7 +693,7 @@
 		};
 	};
 };
-
+*/
 &usbphyc {
 	status = "okay";
 	
