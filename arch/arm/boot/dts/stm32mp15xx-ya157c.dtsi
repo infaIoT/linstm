@@ -457,6 +457,7 @@
 	status = "okay";
 };
 
+
 /*rs232*/
 &uart8 {
 	pinctrl-names = "default", "sleep";
@@ -465,7 +466,7 @@
 	status = "okay";
 };
 
-/*rs485*/
+/*rs485
 &uart5 {
        pinctrl-names = "default", "sleep","idle";
         pinctrl-0 = <&uart5_pins_a>;
@@ -476,7 +477,7 @@
 
         status = "okay";
 };
-
+*/
 
 /* Bluetooth */
 &uart7 {
@@ -486,15 +487,48 @@
 	pinctrl-2 = <&uart7_idle_pins_myir>;
 	uart-has-rtscts;
 	status = "okay";
-
+/* 
 	bluetooth {
 		pinctrl-names = "default";
 		pinctrl-0 = <&btreg0>;
 		compatible = "brcm,bcm43438-bt";
 		max-speed = <3000000>;
 	};
-
+ */
 };
+
+&usart1{
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&usart1_pins_mx>;
+	pinctrl-1 = <&usart1_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN usart1 */
+	/* USER CODE END usart1 */
+};
+
+&usart3{
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&usart3_pins_mx>;
+	pinctrl-1 = <&usart3_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN usart3 */
+	/* USER CODE END usart3 */
+};
+
+&usart6{
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&usart6_pins_mx>;
+	pinctrl-1 = <&usart6_sleep_pins_mx>;
+	status = "okay";
+
+	/* USER CODE BEGIN usart6 */
+	/* USER CODE END usart6 */
+};
+
+
+
 
 /*SPI1 for A7 core*/
 /*
