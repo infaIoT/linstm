@@ -22,6 +22,7 @@
 		serial2 = &uart8;//rs232
 		serial3 = &uart5;//rs485
 		serial4 = &uart7;//bt
+		//serial4 = &uart7;//bt
 	};
 
 	chosen {
