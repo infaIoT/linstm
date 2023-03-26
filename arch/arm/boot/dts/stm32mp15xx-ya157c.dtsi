@@ -58,7 +58,7 @@
 		};
 	};
 
-
+	/*
 	joystick {
 	        compatible = "gpio-keys";
         	#size-cells = <0>;
@@ -69,7 +69,7 @@
                 	interrupts = <11 IRQ_TYPE_EDGE_RISING>;
         	};
 	};
-
+ 	*/
 
 	led {
         	compatible = "gpio-leds";
@@ -93,7 +93,7 @@
 		reset-gpios = <&gpiof 3 GPIO_ACTIVE_LOW>;
 	};
 
-	
+	/*
 	panel_backlight: panel-backlight {
 		compatible = "gpio-backlight";
 		gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
@@ -101,7 +101,7 @@
 		status = "okay";
 	};
 
-	/*
+	
 	panel_backlight: panel-backlight {
 		compatible = "pwm-backlight";
 		pwms = <&pwm4 0 5000000>;
@@ -255,7 +255,7 @@
         pinctrl-1 = <&i2c2_pins_sleep_a>;
         i2c-scl-rising-time-ns = <100>;
         i2c-scl-falling-time-ns = <7>;
-        status = "okay";
+        status = "disabled";
         /delete-property/dmas;
         /delete-property/dma-names;
 	//clock-frequency = <100000>;
@@ -283,7 +283,7 @@
 	i2c-scl-rising-time-ns = <185>;
 	i2c-scl-falling-time-ns = <20>;
 	clock-frequency = <400000>;
-	status = "okay";
+	status = "disabled";
 	/* spare dmas for other usage */
 	/delete-property/dmas;
 	/delete-property/dma-names;
@@ -295,7 +295,7 @@
 		interrupt-parent = <&gpiog>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&stusb1600_pins_a>;
-		status = "okay";
+		status = "disabled";
 		vdd-supply = <&vin>;
 
 		connector {
@@ -328,7 +328,7 @@
 &dsi {
 	#address-cells = <1>;
 	#size-cells = <0>;
-	status = "okay";
+	status = "disabled";
 
 };
 
@@ -496,7 +496,7 @@
 	pinctrl-1 = <&uart7_sleep_pins_myir>;
 	pinctrl-2 = <&uart7_idle_pins_myir>;
 	uart-has-rtscts;
-	status = "okay";
+	status = "disabled";
 /* 
 	bluetooth {
 		pinctrl-names = "default";

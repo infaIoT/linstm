@@ -19,12 +19,9 @@
 	aliases {
 		ethernet0 = &ethernet0;
 		serial0 = &uart4;
-		serial1 = &usart1;
-		serial2 = &uart8;//rs232
-		//serial3 = &uart5;//rs485
-		serial4 = &uart7;//bt
-		serial5 = &usart6;//
-		serial6 = &usart3
+		serial1 = &usart1; // IO EXP
+		serial2 = &uart8;// RF1
+		serial3 = &usart3;// RF2
 	};
 
 	chosen {
@@ -156,7 +153,7 @@
 &sdmmc3 {
 	vmmc-supply = <&vmmcsd_fixed>;
 	mmc-pwrseq = <&wifi_pwrseq>;
-	status = "okay";
+	status = "disabled";
 
 };
 
